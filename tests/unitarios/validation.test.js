@@ -17,3 +17,8 @@ describe('Validação de tarefas', () => {
     test('Retorna String Vazia se o título for indefinido', () => {
         expect(normalizeTitle(undefined)).toBe('')
     })
+
+    // casos de teste para a função validadeTaskInput
+    test('Valida um título correto', () => {
+    expect(validateTaskInput({ title: 'Estudar' }).valid).toBe(true);
+});
