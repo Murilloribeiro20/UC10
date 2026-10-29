@@ -1,5 +1,4 @@
-const { normalizeTitle } = require('../../src/validation');
-
+const { normalizeTitle, validateTaskInput } = require('../../src/validation');
 // Importa a função 'normalizeTitle'
 describe('Validação de tarefas', () => {
     test('Remove os espaços do iníco e do fim do título', () =>{
@@ -19,6 +18,16 @@ describe('Validação de tarefas', () => {
     })
 
     // casos de teste para a função validadeTaskInput
-    test('Valida um título correto', () => {
-    expect(validateTaskInput({ title: 'Estudar' }).valid).toBe(true);
+    
+    test('Retorna verdadeiro para um título válido', () => {
+        expect(validateTaskInput({ title: 'Estudar' }).valid).toBe(true);
 });
+    
+    test('Retorna erro se o título estiver vazio', () => {
+        expect(() => validateTaskInput({ title: '' })).toThrow();
+});
+
+    test('Retorna erro se o título tiver mais de 120 caracteres', () => {
+        expect(() => validateTaskInput({ title: 'A'.repeat(121) })).toThrow();
+});
+
