@@ -1,0 +1,8 @@
+# Dependências
+node_modules /
+
+# Arquivos do npm
+package-lock.json
+
+# Dados do projeto
+data/
