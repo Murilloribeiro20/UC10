@@ -427,18 +427,7 @@ Fórmula utilizada:
 
 ## 7. Evidências da execução dos testes
 
-As capturas de tela devem ser adicionadas após a execução dos testes no terminal do VS Code.
-
-Incluir evidências que mostrem:
-
-- Execução dos testes pelo Jest.
-- Quantidade de testes aprovados e reprovados.
-- Resultado apresentado no terminal.
-- Correção da mensagem de validação do nome, caso seja realizada.
-
-**Print da execução:** Adicionar imagem após executar `npm test`.
-
----
+<img width="529" height="794" alt="Captura de tela 2026-11-05 164235" src="https://github.com/user-attachments/assets/91022b41-c2d7-4d38-9f33-da64dc98e2e2" />
 
 ## 8. Problemas identificados e correções realizadas
 
