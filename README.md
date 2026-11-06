@@ -427,7 +427,8 @@ Fórmula utilizada:
 
 ## 7. Evidências da execução dos testes
 
-<img width="529" height="794" alt="Captura de tela 2026-11-05 164235" src="https://github.com/user-attachments/assets/91022b41-c2d7-4d38-9f33-da64dc98e2e2" />
+<img width="1401" height="690" alt="Captura de tela 2026-11-05 112554" src="https://github.com/user-attachments/assets/3c71df89-8495-45d3-8946-52115316ff3a" />
+
 
 ## 8. Problemas identificados e correções realizadas
 
