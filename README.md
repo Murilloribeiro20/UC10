@@ -59,3 +59,10 @@ Porque a função determina que compras com valor maiour ou igual a R$ 200 receb
 
 ## B 
  Porque a entrada "25" está entre aspas, ou seja, o tipo da entrada está string. E a função exige que a temperatura seje um número, mesmo representando númericamente o 25, ela dá erro.
+
+# Questão 6
+
+## A
+Testes unitários são testes feitos para verificar se pequenas partes de um código, como funções, estão funcionando corretamente. Eles são importantes porque ajudam a encontrar erros, evitar problemas e garantir que o sistema apresente os resultados esperados.
+
+## B
