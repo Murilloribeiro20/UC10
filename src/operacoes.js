@@ -27,6 +27,27 @@ function validarCadastro(nome, idade, email) {
     }
     return true;
 }
+function calcularFrete(valorCompra, distancia) {
+    if (valorCompra < 0 || distancia < 0) {
+        throw new Error("Valores inválidos");
+    }
+    if (valorCompra >= 200) {
+        return 0;
+    }
+    return distancia * 2;
+}
+function converterCelsiusParaFahrenheit(celsius) {
+    if (typeof celsius !== "number") {
+        throw new Error("A temperatura deve ser numérica");
+    }
+    return (celsius * 9 / 5) + 32;
+}
+function calcularTotal(quantidade, precoUnitario) {
+    if (quantidade < 0 || precoUnitario < 0) {
+        throw new Error("Valores inválidos");
+    }
+    return quantidade * precoUnitario;
+}
 
 
-module.exports = { calcularDesconto, verificarAprovacao };
+module.exports = { calcularDesconto, verificarAprovacao, validarCadastro, calcularFrete, converterCelsiusParaFahrenheit, calcularTotal };
