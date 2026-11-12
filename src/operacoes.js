@@ -48,6 +48,13 @@ function calcularTotal(quantidade, precoUnitario) {
     }
     return quantidade * precoUnitario;
 }
+function validarSenha(senha) {
+    if (senha.length < 8) {
+        return false;
+    }
+    return true;
+}
 
 
-module.exports = { calcularDesconto, verificarAprovacao, validarCadastro, calcularFrete, converterCelsiusParaFahrenheit, calcularTotal };
+
+module.exports = { calcularDesconto, verificarAprovacao, validarCadastro, calcularFrete, converterCelsiusParaFahrenheit, calcularTotal, validarSenha };

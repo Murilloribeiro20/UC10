@@ -66,3 +66,37 @@ Porque a função determina que compras com valor maiour ou igual a R$ 200 receb
 Testes unitários são testes feitos para verificar se pequenas partes de um código, como funções, estão funcionando corretamente. Eles são importantes porque ajudam a encontrar erros, evitar problemas e garantir que o sistema apresente os resultados esperados.
 
 ## B
+
+Teste A – PASSA
+A função recebe quantidade 3 e preço 10. O resultado é 3 × 10 = 30, exatamente como esperado
+Teste B – PASSA
+A quantidade é zero. Como zero multiplicado por 10 é zero, o resultado está correto
+Teste C – PASSA
+A quantidade é negativa (-2). A função identifica o valor inválido e lança o erro "Valores inválidos", como esperado
+Teste D – FALHA
+O preço unitário é negativo (-5). A função identifica esse valor como inválido e lança um erro, em vez de retornar -10
+
+## C
+
+O Teste D apresenta uma expectativa incompatível, pois a função não aceita valores negativos para quantidade ou preço unitário. por isso, o teste espera um resultado (-10), mas a função lança um erro com a mensagem "Valores inválidos"
+
+# Questão 7
+
+## A
+
+Teste A – PASSA
+A senha possui exatamente 8 caracteres. Como a função aceita senhas com 8 ou mais caracteres, o resultado é true.
+Teste B – PASSA
+A senha possui apenas 6 caracteres. Como tem menos de 8, a função retorna false, como esperado.
+Teste C – FALHA
+A senha possui 10 caracteres. Como a função aceita qualquer senha com 8 ou mais caracteres, o resultado deveria ser true, mas o teste espera false.
+Teste D – PASSA
+A senha possui 12 caracteres. Como está acima do mínimo de 8, a função retorna true, como esperado.
+
+## B
+
+O problema é que a expectativa está incorreta. A função não rejeita senhas com 10 caracteres, pois aceita qualquer senha que tenha pelo menos 8 caracteres. Portanto, o resultado esperado deveria ser true
+
+## C
+
+Não. A função verifica apenas a quantidade de caracteres da senha, por meio de senha.length. ela não verifica se existem letras maiúsculas, números ou caracteres especiais. por isso, qualquer senha com 8 ou mais caracteres será aceita, independentemente dos caracteres utilizados.

@@ -97,7 +97,7 @@ describe("Textes da função converterCelsiusParaFahrenheit()", () => {
     test("Caso 4: Converte 25°C", () => {
         expect(converterCelsiusParaFahrenheit(25)).toBe(77);
     });
-    test("Caso 5: Verifica erro com entrada em texto numérico", () => {
+    test("Caso 5: deve lançar um erro para string '25'", () => {
         expect(() => converterCelsiusParaFahrenheit("25")).toThrow("A temperatura deve ser numérica");
     });
     test("Caso 6: Verifica erro com texto inválido", () => {
@@ -119,6 +119,20 @@ describe("Textes da função calcularTotal()", () => {
         expect(calcularTotal(2, -5)).toBe(-10);
     });
 });
-
-    module.exports = { calcularDesconto, verificarAprovacao, validarCadastro, calcularFrete, converterCelsiusParaFahrenheit, calcularTotal };
+const {validarSenha} = require("../src/operacoes");
+describe("Textes da função validarSenha()", () => {
+    test("deve aceitar senha com 8 caracteres", () => {
+        expect(validarSenha("abc12345")).toBe(true);
+    });
+    test("deve rejeitar senha com menos de 8 caracteres", () => {
+        expect(validarSenha("abc123")).toBe(false);
+    });
+    test("deve rejeitar senha com 10 caracteres", () => {
+        expect(validarSenha("abc1234567")).toBe(false);
+    });
+    test("deve aceitar senha com 12 caracteres", () => {
+        expect(validarSenha("abc123456789")).toBe(true);
+    });
+});
+    module.exports = { calcularDesconto, verificarAprovacao, validarCadastro, calcularFrete, converterCelsiusParaFahrenheit, calcularTotal, validarSenha };
 });
