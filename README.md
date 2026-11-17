@@ -1,5 +1,5 @@
 # UC10 - Realizar Testes nas Aplicações Desenvolvidas
-# Rafaela Pessin 
+# Murillo de Oliveira Ribeiro
 
 ## Descrição e Funcionalidades
 
