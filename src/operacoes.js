@@ -65,6 +65,39 @@ function converterRealParaDolar(valorReal, cotacao) {
     return valorReal / cotacao;
 }
 
+// QUESTÃO 6
+function calcularPedido(quantidade, precoUnitario) {
+    if (quantidade <= 0 || precoUnitario < 0) {
+        throw new Error("Dados inválidos");
+    }
+    return quantidade * precoUnitario;
+}
+
+// QUESTÃO 7
+function validarTamanhoSenha(senha) {
+    if (senha.length < 6 || senha.length > 12) {
+        return false;
+    }
+    return true;
+}
+function verificarDisponibilidade(estoque, quantidade) {
+    if (quantidade <= 0) {
+        throw new Error("Quantidade inválida");
+    }
+    if (estoque < 0) {
+        throw new Error("Estoque inválido");
+    }
+    if (quantidade > estoque) {
+        return "Estoque insuficiente";
+    }
+    return "Retirada autorizada";
+}
+function calcularMediaFinal(nota1, nota2) {
+    if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10) {
+        throw new Error("Notas inválidas");
+    }
+    return (nota1 + nota2) / 2;
+}
 
 //Moduleichonchon
-module.exports = { calcularAcrescimo, classificarDesempenho, validarJogador, calcularEntrega, converterRealParaDolar };
+module.exports = { calcularAcrescimo, classificarDesempenho, validarJogador, calcularEntrega, converterRealParaDolar, calcularPedido, validarTamanhoSenha, verificarDisponibilidade, calcularMediaFinal };

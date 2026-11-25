@@ -90,6 +90,7 @@ describe("Testes da função calcularEntrega", () => {
 const { converterRealParaDolar } = require("../src/operacoes");
 describe("Testes da função converterRealParaDolar", () => {
     test("Caso 1: Deve converter 100 reais para dólares", () => {
+          
         expect(converterRealParaDolar(100, 5)).toBe(20);
     });
     test("Caso 2: Deve converter 250 reais para dólares", () => {
@@ -102,39 +103,102 @@ describe("Testes da função converterRealParaDolar", () => {
         expect(converterRealParaDolar(100, 4)).toBe(25);
     });
     test("Caso 5: Deve apresentar erro quando o valor for texto", () => {
-        expect(() => converterRealParaDolar("100", 5))
-            .toThrow("Os valores devem ser numéricos");
+        expect(() => converterRealParaDolar("100", 5)).toThrow("Os valores devem ser numéricos");
     });
     test("Caso 6: Deve apresentar erro quando a cotação for texto", () => {
-        expect(() => converterRealParaDolar(100, "5"))
-            .toThrow("Os valores devem ser numéricos");
+        expect(() => converterRealParaDolar(100, "5")).toThrow("Os valores devem ser numéricos");
     });
     test("Caso 7: Deve apresentar erro para valor negativo", () => {
-        expect(() => converterRealParaDolar(-50, 5))
-            .toThrow("Valores inválidos");
+        expect(() => converterRealParaDolar(-50, 5)).toThrow("Valores inválidos");
     });
     test("Caso 8: Deve apresentar erro para cotação igual a zero", () => {
-        expect(() => converterRealParaDolar(100, 0))
-            .toThrow("Valores inválidos");
+        expect(() => converterRealParaDolar(100, 0)).toThrow("Valores inválidos");
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const { calcularPedido } = require("../src/operacoes");
+describe("Testes da função calcularPedido", () => {
+    test("deve calcular o valor total corretamente", () => {
+        expect(calcularPedido(4, 20)).toBe(80);
+    });
+    test("deve retornar zero quando o preço for zero", () => {
+        expect(calcularPedido(3, 0)).toBe(0);
+    });
+    test("deve lançar erro quando a quantidade for zero", () => {
+        expect(() => calcularPedido(0, 10)).toThrow("Dados inválidos");
+    });
+    test("deve lançar o erro quando o preço for negativo", () => {
+        expect(() => calcularPedido(2, -5)).toThrow("Dados inválidos");
+    });
+});
+const { validarTamanhoSenha } = require("../src/operacoes");
+describe("Testes da função validarTamanhoSenha", () => {
+    test("deve aceitar senha com tamanho mínimo de 6 caracteres", () => {
+        expect(validarTamanhoSenha("abc123")).toBe(true);
+    });
+    test("deve rejeitar senha com 5 caracteres", () => {
+        expect(validarTamanhoSenha("abc12")).toBe(false);
+    });
+    test("deve aceitar senha com 12 caracteres", () => {
+        expect(validarTamanhoSenha("abc123456789")).toBe(true);
+    });
+    test("deve aceitar senha com 10 caracteres", () => {
+        expect(validarTamanhoSenha("abc1234567")).toBe(true);
+    });
+    test("deve rejeitar senha com 13 caracteres", () => {
+        expect(validarTamanhoSenha("abc1234567890")).toBe(false);
+    });
+    test("deve aceitar senha com 7 caracteres", () => {
+        expect(validarTamanhoSenha("abc1234")).toBe(true);
+    });
+    test("deve rejeitar senha com 4 caracteres", () => {
+        expect(validarTamanhoSenha("abcd")).toBe(false);
+    });
+});
+const { verificarDisponibilidade } = require("../src/operacoes");
+describe("Testes da função verificarDisponibilidade", () => {
+    test("deve autorizar retirada quando há estoque suficiente", () => {
+        expect(verificarDisponibilidade(20, 5)).toBe("Retirada autorizada");
+    });
+    test("deve informar estoque insuficiente", () => {
+        expect(verificarDisponibilidade(5, 10)).toBe("Estoque insuficiente");
+    });
+    test("deve autorizar retirada de toda a quantidade disponível", () => {
+        expect(verificarDisponibilidade(10, 10)).toBe("Retirada autorizada");
+    });
+    test("deve lançar erro para quantidade zero", () => {
+        expect(() => verificarDisponibilidade(10, 0)).toThrow("Quantidade inválida");
+    });
+    test("deve lançar erro para estoque negativo", () => {
+        expect(() => verificarDisponibilidade(-5, 2)).toThrow("Estoque inválido");
+    });
+    test("deve lançar erro para quantidade negativa", () => {
+        expect(() => verificarDisponibilidade(10, -3)).toThrow("Quantidade inválida");
+    });
+});
+const { calcularMediaFinal } = require("../src/operacoes"); 
+describe("Testes da função calcularMediaFinal", () => {
+    test("deve calcular a média corretamente", () => {
+        expect(calcularMediaFinal(6, 8)).toBe(7);
+    });
+    test("deve retornar média máxima", () => {
+        expect(calcularMediaFinal(10, 10)).toBe(10);
+    });
+    test("deve calcular média com nota zero", () => {
+        expect(calcularMediaFinal(0, 8)).toBe(4);
+    });
+    test("deve rejeitar nota negativa", () => {
+        expect(() => calcularMediaFinal(-2, 8)).toThrow("Notas inválidas");
+    });
+    test("deve rejeitar nota superior a 10", () => {
+        expect(() => calcularMediaFinal(8, 12)).toThrow("Notas inválidas");
+    });
+    test("deve calcular a média de duas notas iguais", () => {
+        expect(calcularMediaFinal(7, 7)).toBe(7);
+    });
+    test("deve aceitar duas notas iguais a zero", () => {
+        expect(calcularMediaFinal(0, 0)).toBe(0);
+    });
+    test("deve rejeitar nota acima de 10", () => {
+        expect(() => calcularMediaFinal(11, 5)).toThrow("Notas inválidas");
+    });
+});
