@@ -80,6 +80,7 @@ function validarTamanhoSenha(senha) {
     }
     return true;
 }
+// QUESTÃO 8
 function verificarDisponibilidade(estoque, quantidade) {
     if (quantidade <= 0) {
         throw new Error("Quantidade inválida");
@@ -92,6 +93,7 @@ function verificarDisponibilidade(estoque, quantidade) {
     }
     return "Retirada autorizada";
 }
+//QUESTÃO 9
 function calcularMediaFinal(nota1, nota2) {
     if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10) {
         throw new Error("Notas inválidas");

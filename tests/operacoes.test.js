@@ -1,4 +1,6 @@
 // TESTES
+
+// TESTE 1 
 const { calcularAcrescimo } = require("../src/operacoes");
 describe("Testes da função calcularAcrescimo", () => {
     test("Deve calcular o acréscimo corretamente", () => {
@@ -14,6 +16,8 @@ describe("Testes da função calcularAcrescimo", () => {
         expect(() => calcularAcrescimo(100, 150)).toThrow("Dados inválidos");
     });
 });
+
+//TESTE 2
 const { classificarDesempenho } = require("../src/operacoes");
 describe("Testes da função classificarDesempenho", () => {
     test("Deve classificar como Excelente", () => {
@@ -32,6 +36,8 @@ describe("Testes da função classificarDesempenho", () => {
         expect(() => classificarDesempenho(11)).toThrow("Nota inválida");
     });
 });
+
+//TESTE 3
 const { validarJogador } = require("../src/operacoes");
 describe("Testes da função validarJogador", () => {
     test("Deve aceitar todos os dados válidos", () => {
@@ -61,8 +67,9 @@ describe("Testes da função validarJogador", () => {
     test("Deve aceitar idade máxima de 80 anos", () => {
         expect(validarJogador("murillo", 80, 100)).toBe(true);
     });
-
 });
+
+//TESTE 4
 const { calcularEntrega } = require("../src/operacoes");
 describe("Testes da função calcularEntrega", () => {
     test("caso 1: deve oferecer entrega grátis", () => {
@@ -87,6 +94,8 @@ describe("Testes da função calcularEntrega", () => {
         expect(() => calcularEntrega(100, -2)).toThrow("Valores inválidos");
     });
 });
+
+//TESTE 5
 const { converterRealParaDolar } = require("../src/operacoes");
 describe("Testes da função converterRealParaDolar", () => {
     test("Caso 1: Deve converter 100 reais para dólares", () => {
@@ -115,6 +124,8 @@ describe("Testes da função converterRealParaDolar", () => {
         expect(() => converterRealParaDolar(100, 0)).toThrow("Valores inválidos");
     });
 });
+
+//TESTE 6
 const { calcularPedido } = require("../src/operacoes");
 describe("Testes da função calcularPedido", () => {
     test("deve calcular o valor total corretamente", () => {
@@ -130,6 +141,8 @@ describe("Testes da função calcularPedido", () => {
         expect(() => calcularPedido(2, -5)).toThrow("Dados inválidos");
     });
 });
+
+//TESTE 7
 const { validarTamanhoSenha } = require("../src/operacoes");
 describe("Testes da função validarTamanhoSenha", () => {
     test("deve aceitar senha com tamanho mínimo de 6 caracteres", () => {
@@ -154,6 +167,8 @@ describe("Testes da função validarTamanhoSenha", () => {
         expect(validarTamanhoSenha("abcd")).toBe(false);
     });
 });
+
+//TESTE 8
 const { verificarDisponibilidade } = require("../src/operacoes");
 describe("Testes da função verificarDisponibilidade", () => {
     test("deve autorizar retirada quando há estoque suficiente", () => {
@@ -175,6 +190,8 @@ describe("Testes da função verificarDisponibilidade", () => {
         expect(() => verificarDisponibilidade(10, -3)).toThrow("Quantidade inválida");
     });
 });
+
+//TESTE 9
 const { calcularMediaFinal } = require("../src/operacoes"); 
 describe("Testes da função calcularMediaFinal", () => {
     test("deve calcular a média corretamente", () => {
